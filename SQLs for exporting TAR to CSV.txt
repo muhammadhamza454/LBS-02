@@ -1,0 +1,5 @@
+select ST_AsText(point) from lbs_g3_brussels;
+select ST_X(point) AS X, ST_Y(point) AS Y FROM lbs_g3_brussels;
+select ST_X(ST_TRANSFORM(point, 4326)) AS LONG FROM lbs_g3_brussels;
+COPY (select user_id, created_at, lang, hashtags, text, ST_X(ST_TRANSFORM(point, 4326)) AS LONG, ST_Y(ST_TRANSFORM(point, 4326)) AS LAT, arc_id  from lbs_g3_brussels) TO 'D:\LBS\Brussels.csv'
+   DELIMITER ',' CSV HEADER;
