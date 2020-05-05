@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Test</title>
+</head>
+<body>
+
+<script>
+
+// Arrays contain multiple values
+var cities = ["Munich", "Vienna", "Dresden"];
+var population = [1429584, 1840573, 536308];
+var coordinates = [48.137222, 11.575556, 48.20833, 16.373064, 51.049259, 13.73836];
+
+var first = cities[0];                        // "Munich"
+var second = cities[1];                       // "Vienna"
+
+var pos = 1;
+var city = cities[pos-1];                     // "Munich"
+var lat = coordinates[(pos-1)*2];             // 48.137222
+
+console.log("Latitude of " + city + " is: " + lat);
+
+cities.push("New York");               // Append new item
+var length = cities.length;            // 4
+
+var last = cities[cities.length - 1];  // last item: "New York"
+
+console.log("Last item: " + last);
+
+// we overwrite our coordinates Array with a better structure
+// Two-dimensional Array of coordinates
+coordinates = [
+   [48.137222, 11.575556],
+   [48.20833, 16.373064],
+   [51.049259, 13.73836]
+];
+
+var munich_lon = coordinates[0][1];
+
+console.log("Longitude of Munich is: " + munich_lon);
+
+</script>
+
+</body>
+</html>
